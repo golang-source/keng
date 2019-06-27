@@ -5,6 +5,7 @@ package main
 // ins.type() 只能用于接口类型interface{} 其它指针类型要转化为interface{}才可以操作，所以编译错误
 func main() {
 	i := GetPerson()
+	//interface 的.() 1/query type 2. transform 特定类型
 
 	switch i.(type) {
 	case int:
