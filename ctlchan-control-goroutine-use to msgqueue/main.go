@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func doWrite(b chan int ,writeChan chan string)  {
@@ -28,7 +27,7 @@ func main() {
 	//controll speed to decide write speed  频率
 	for i:=0;i<101;i++{
 		bucket<-i
-		time.Sleep(time.Millisecond*500)
+		//time.Sleep(time.Millisecond*500)
 	}
 
 	defer close(bucket)
