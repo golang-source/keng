@@ -44,9 +44,12 @@ func (this * Context) Exit() {
 	  }
 	  this.Unlock()
 }
-
+func (this *Context)destructor(){
+	close(this.sig)
+}
 func (this *Context)Wait()  {
 	  <-this.sig
+	  this.destructor()
 }
 
 func main() {
